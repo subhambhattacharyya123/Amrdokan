@@ -10,13 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ---------- CSS variables ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     :root {
       --primary: #b88a5c;
       --primary-dark: #9c6f46;
@@ -43,496 +37,215 @@
       min-height: 100vh;
       transition: background 0.2s;
     }
-    /* ---------- HEADER ---------- */
+    /* HEADER */
     .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: var(--header-height);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 18px;
-      box-shadow: var(--shadow-sm);
-      z-index: 100;
-      border-bottom: 1px solid var(--border);
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: #ffffff; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 18px; box-shadow: var(--shadow-sm); z-index: 100; border-bottom: 1px solid var(--border);
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: -0.5px;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-weight: 700; font-size: 1.5rem; letter-spacing: -0.5px;
+      color: var(--primary); display: flex; align-items: center; gap: 6px;
     }
-    .logo i {
-      font-size: 1.7rem;
-      color: var(--primary-dark);
-    }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+    .logo i { font-size: 1.7rem; color: var(--primary-dark); }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
     .auth-indicator {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-light);
-      cursor: pointer;
+      display: flex; align-items: center; gap: 6px; font-size: 0.85rem;
+      font-weight: 500; color: var(--text-light); cursor: pointer;
     }
     .auth-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #b0b0b0;
-      transition: background 0.2s;
+      width: 12px; height: 12px; border-radius: 50%; background: #b0b0b0; transition: background 0.2s;
     }
-    .auth-dot.logged-in {
-      background: #2ecc71;
-      box-shadow: 0 0 6px #2ecc71;
-    }
-    .header-actions i {
-      font-size: 1.4rem;
-      color: var(--secondary);
-      transition: color 0.2s;
-    }
-    .header-actions i:hover {
-      color: var(--primary);
-    }
-    /* ---------- BOTTOM NAV ---------- */
+    .auth-dot.logged-in { background: #2ecc71; box-shadow: 0 0 6px #2ecc71; }
+    .header-actions i { font-size: 1.4rem; color: var(--secondary); transition: color 0.2s; }
+    .header-actions i:hover { color: var(--primary); }
+    /* BOTTOM NAV */
     .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: var(--bottom-nav-height);
-      background: #ffffff;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
-      border-top: 1px solid var(--border);
-      z-index: 100;
+      position: fixed; bottom: 0; left: 0; width: 100%; height: var(--bottom-nav-height);
+      background: #ffffff; display: flex; justify-content: space-around; align-items: center;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04); border-top: 1px solid var(--border); z-index: 100;
     }
     .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-light);
-      text-decoration: none;
-      position: relative;
-      flex: 1;
-      height: 100%;
-      transition: color 0.2s;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; font-size: 0.7rem; font-weight: 500; color: var(--text-light);
+      text-decoration: none; position: relative; flex: 1; height: 100%; transition: color 0.2s;
     }
-    .nav-item i {
-      font-size: 1.4rem;
-    }
-    .nav-item.active {
-      color: var(--primary);
-    }
+    .nav-item i { font-size: 1.4rem; }
+    .nav-item.active { color: var(--primary); }
     .nav-item .badge {
-      position: absolute;
-      top: 8px;
-      right: calc(50% - 24px);
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 30px;
-      min-width: 18px;
-      text-align: center;
+      position: absolute; top: 8px; right: calc(50% - 24px); background: var(--accent);
+      color: #fff; font-size: 0.65rem; font-weight: 600; padding: 2px 6px;
+      border-radius: 30px; min-width: 18px; text-align: center;
     }
-    /* ---------- MAIN SECTIONS ---------- */
-    .section {
-      display: none;
-      padding: 16px;
-      animation: fade 0.25s ease;
-    }
-    .section.active {
-      display: block;
-    }
-    @keyframes fade {
-      from { opacity: 0.6; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--secondary);
-    }
-    /* ---------- HERO SLIDER ---------- */
+    /* SECTIONS */
+    .section { display: none; padding: 16px; animation: fade 0.25s ease; }
+    .section.active { display: block; }
+    @keyframes fade { from { opacity: 0.6; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    h2 { font-size: 1.6rem; font-weight: 600; margin-bottom: 16px; color: var(--secondary); }
+    /* HERO SLIDER */
     .hero {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 22px;
-      aspect-ratio: 16/9;
-      background: var(--primary-light);
-      box-shadow: var(--shadow-sm);
+      position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 22px;
+      aspect-ratio: 16/9; background: var(--primary-light); box-shadow: var(--shadow-sm);
     }
-    .hero-slide {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .hero-slide { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
+      display: flex; align-items: center; justify-content: center; height: 100%;
       background: linear-gradient(135deg, var(--primary-light), #fff);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 2px;
+      font-size: 2rem; font-weight: 700; color: var(--primary); letter-spacing: 2px;
     }
     .hero-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.75);
-      border: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      color: var(--secondary);
-      cursor: pointer;
-      backdrop-filter: blur(6px);
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.75); border: none; width: 38px; height: 38px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--secondary); cursor: pointer; backdrop-filter: blur(6px);
       transition: background 0.2s;
     }
     .hero-btn:hover { background: #fff; }
     .hero-btn.prev { left: 12px; }
     .hero-btn.next { right: 12px; }
     .hero-indicators {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px;
     }
     .hero-indicators span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: background 0.2s;
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5);
+      cursor: pointer; transition: background 0.2s;
     }
-    .hero-indicators span.active {
-      background: #fff;
-      width: 22px;
-      border-radius: 30px;
-    }
-    /* ---------- CATEGORY BUBBLES ---------- */
+    .hero-indicators span.active { background: #fff; width: 22px; border-radius: 30px; }
+    /* CATEGORIES */
     .category-scroll {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      margin-bottom: 18px;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
+      display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;
+      margin-bottom: 18px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
     }
     .category-scroll::-webkit-scrollbar { display: none; }
     .cat-bubble {
-      flex: 0 0 auto;
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #fff;
-      background: var(--primary);
-      white-space: nowrap;
-      transition: transform 0.2s, opacity 0.2s;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      border: none;
+      flex: 0 0 auto; padding: 8px 18px; border-radius: 40px; font-size: 0.85rem;
+      font-weight: 500; color: #fff; background: var(--primary); white-space: nowrap;
+      transition: transform 0.2s; cursor: pointer; box-shadow: var(--shadow-sm); border: none;
     }
     .cat-bubble:active { transform: scale(0.95); }
-    /* ---------- PRODUCT GRID ---------- */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    @media (min-width: 640px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 992px) {
-      .product-grid { grid-template-columns: repeat(4, 1fr); }
-      body { padding-left: 0; }
-    }
+    /* PRODUCT GRID */
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
     .product-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      border: 1px solid var(--border);
+      background: var(--card-bg); border-radius: var(--radius-sm); overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; cursor: pointer; border: 1px solid var(--border);
     }
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
     .product-img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      background: #f2ece6;
-      display: block;
+      width: 100%; aspect-ratio: 1/1; object-fit: cover; background: #f2ece6; display: block;
     }
-    .product-info {
-      padding: 10px 12px 14px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+    .product-info { padding: 10px 12px 14px; flex: 1; display: flex; flex-direction: column; }
     .product-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-weight: 600; font-size: 0.9rem; margin-bottom: 2px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .product-cat {
-      font-size: 0.7rem;
-      color: var(--text-light);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      font-size: 0.7rem; color: var(--text-light); margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: 0.3px;
     }
-    .product-price {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--primary-dark);
-      margin-bottom: 10px;
-    }
-    .card-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: auto;
-    }
+    .product-price { font-weight: 700; font-size: 1rem; color: var(--primary-dark); margin-bottom: 10px; }
+    .card-actions { display: flex; gap: 8px; margin-top: auto; }
     .btn-icon {
-      background: var(--primary-light);
-      border: none;
-      border-radius: 30px;
-      padding: 8px 0;
-      flex: 1;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: background 0.2s, color 0.2s;
-      cursor: pointer;
-      border: 1px solid transparent;
+      background: var(--primary-light); border: none; border-radius: 30px; padding: 8px 0;
+      flex: 1; font-size: 0.75rem; font-weight: 600; color: var(--primary-dark);
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      transition: background 0.2s, color 0.2s; cursor: pointer; border: 1px solid transparent;
     }
     .btn-icon i { font-size: 0.9rem; }
-    .btn-icon:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-icon.wishlisted {
-      background: var(--primary);
-      color: #fff;
-    }
-    /* ---------- MODALS ---------- */
+    .btn-icon:hover { background: var(--primary); color: #fff; }
+    .btn-icon.wishlisted { background: var(--primary); color: #fff; }
+    /* MODALS */
     .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 18px;
-      opacity: 0;
-      visibility: hidden;
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center;
+      z-index: 1000; padding: 18px; opacity: 0; visibility: hidden;
       transition: opacity 0.25s, visibility 0.25s;
     }
-    .modal-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
     .modal {
-      background: #fff;
-      border-radius: var(--radius);
-      max-width: 460px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 24px 20px;
-      box-shadow: var(--shadow-md);
-      position: relative;
+      background: #fff; border-radius: var(--radius); max-width: 460px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 24px 20px;
+      box-shadow: var(--shadow-md); position: relative;
     }
     .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: var(--text-light);
-      cursor: pointer;
+      position: absolute; top: 16px; right: 16px; background: none; border: none;
+      font-size: 1.6rem; color: var(--text-light); cursor: pointer;
     }
-    .modal h3 {
-      margin-bottom: 16px;
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: var(--secondary);
-    }
-    .form-group {
-      margin-bottom: 14px;
-    }
+    .modal h3 { margin-bottom: 16px; font-weight: 600; font-size: 1.3rem; color: var(--secondary); }
+    .form-group { margin-bottom: 14px; }
     .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-light);
-      margin-bottom: 4px;
+      display: block; font-size: 0.8rem; font-weight: 500;
+      color: var(--text-light); margin-bottom: 4px;
     }
     .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 40px;
-      border: 1px solid var(--border);
-      font-size: 0.9rem;
-      background: #fefcf9;
-      outline: none;
-      transition: border 0.2s;
+      width: 100%; padding: 12px 14px; border-radius: 40px;
+      border: 1px solid var(--border); font-size: 0.9rem;
+      background: #fefcf9; outline: none; transition: border 0.2s;
     }
     .form-group textarea { border-radius: 18px; resize: vertical; }
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--primary);
-    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
     .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 40px;
-      padding: 14px;
-      font-weight: 600;
-      width: 100%;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      background: var(--primary); color: #fff; border: none; border-radius: 40px;
+      padding: 14px; font-weight: 600; width: 100%; font-size: 0.95rem;
+      cursor: pointer; transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
     }
     .btn-primary:hover { background: var(--primary-dark); }
     .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      border-radius: 40px;
-      padding: 12px;
-      font-weight: 600;
-      width: 100%;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      background: transparent; border: 2px solid var(--primary); color: var(--primary);
+      border-radius: 40px; padding: 12px; font-weight: 600; width: 100%;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
     }
-    .btn-outline:hover {
-      background: var(--primary);
-      color: #fff;
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-google {
+      background: #fff; color: #3c4043; border: 1px solid #dadce0;
+      border-radius: 40px; padding: 13px; font-weight: 600; width: 100%;
+      font-size: 0.95rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; gap: 10px;
+      transition: background 0.2s, box-shadow 0.2s; font-family: 'Poppins', sans-serif;
+    }
+    .btn-google:hover { background: #f8f9fa; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .btn-google img { width: 20px; height: 20px; }
+    .divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 18px 0; color: var(--text-light); font-size: 0.78rem;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
     }
     .toast {
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--secondary);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 60px;
-      font-size: 0.9rem;
-      z-index: 2000;
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-      white-space: nowrap;
+      position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+      background: var(--secondary); color: #fff; padding: 12px 24px;
+      border-radius: 60px; font-size: 0.9rem; z-index: 2000;
+      box-shadow: var(--shadow-md); opacity: 0; transition: opacity 0.3s;
+      pointer-events: none; white-space: nowrap;
     }
     .toast.show { opacity: 1; }
     .list-item {
-      display: flex;
-      gap: 12px;
-      background: var(--card-bg);
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid var(--border);
-      align-items: center;
+      display: flex; gap: 12px; background: var(--card-bg); border-radius: var(--radius-sm);
+      padding: 12px; margin-bottom: 12px; border: 1px solid var(--border); align-items: center;
     }
     .list-item img {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #f2ece6;
+      width: 70px; height: 70px; object-fit: cover; border-radius: 12px; background: #f2ece6;
     }
     .list-item-info { flex: 1; }
     .list-item-info h4 { font-size: 0.95rem; font-weight: 600; }
     .list-item-info p { font-size: 0.8rem; color: var(--text-light); }
-    .qty-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 4px;
-    }
+    .qty-controls { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
     .qty-controls button {
-      background: var(--primary-light);
-      border: none;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      font-weight: 700;
-      color: var(--primary-dark);
-      cursor: pointer;
+      background: var(--primary-light); border: none; width: 28px; height: 28px;
+      border-radius: 50%; font-weight: 700; color: var(--primary-dark); cursor: pointer;
     }
     .action-link {
-      color: var(--accent);
-      background: none;
-      border: none;
-      font-weight: 500;
-      font-size: 0.8rem;
-      cursor: pointer;
+      color: var(--accent); background: none; border: none;
+      font-weight: 500; font-size: 0.8rem; cursor: pointer;
     }
     .status-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: capitalize;
-      background: #eee;
+      display: inline-block; padding: 4px 10px; border-radius: 30px;
+      font-size: 0.7rem; font-weight: 600; text-transform: capitalize; background: #eee;
     }
     .status-Pending { background: #fef3c7; color: #b45309; }
     .status-Confirmed { background: #dbeafe; color: #1e40af; }
@@ -541,59 +254,29 @@
     .status-Delivered { background: #d1fae5; color: #065f46; }
     .status-Cancelled { background: #fee2e2; color: #991b1b; }
     .menu-overlay {
-      position: fixed;
-      inset: 0;
-      background: #fff;
-      z-index: 500;
-      display: none;
-      flex-direction: column;
-      padding: 32px 24px;
-      animation: fade 0.2s;
+      position: fixed; inset: 0; background: #fff; z-index: 500;
+      display: none; flex-direction: column; padding: 32px 24px; animation: fade 0.2s;
     }
     .menu-overlay.open { display: flex; }
     .menu-overlay .close-menu {
-      align-self: flex-end;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      color: var(--secondary);
-      cursor: pointer;
+      align-self: flex-end; font-size: 2rem; background: none;
+      border: none; color: var(--secondary); cursor: pointer;
     }
-    .menu-links {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    .menu-links { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
     .menu-links a {
-      font-size: 1.4rem;
-      font-weight: 500;
-      text-decoration: none;
-      color: var(--secondary);
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
+      font-size: 1.4rem; font-weight: 500; text-decoration: none; color: var(--secondary);
+      display: flex; align-items: center; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--border);
     }
     .menu-links a i { width: 28px; color: var(--primary); }
-    .empty-state {
-      text-align: center;
-      padding: 40px 10px;
-      color: var(--text-light);
-    }
+    .empty-state { text-align: center; padding: 40px 10px; color: var(--text-light); }
     .empty-state i { font-size: 3rem; margin-bottom: 12px; opacity: 0.3; }
-    .flex-row { display: flex; gap: 8px; align-items: center; }
     .mt-2 { margin-top: 12px; }
-    .text-center { text-align: center; }
   </style>
 </head>
 <body>
-  <!-- ========== HEADER ========== -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="logo">
-      <i class="fas fa-hotel"></i> Mordokan
-    </div>
+    <div class="logo"><i class="fas fa-hotel"></i> Mordokan</div>
     <div class="header-actions">
       <div class="auth-indicator" id="authIndicator">
         <span class="auth-dot" id="authDot"></span>
@@ -603,7 +286,6 @@
     </div>
   </header>
 
-  <!-- ========== MAIN SECTIONS ========== -->
   <main>
     <!-- HOME -->
     <section id="home" class="section active">
@@ -672,7 +354,7 @@
     </section>
   </main>
 
-  <!-- ========== BOTTOM NAV ========== -->
+  <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
     <a href="#home" class="nav-item active" data-route="home"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="#wishlist" class="nav-item" data-route="wishlist"><i class="fas fa-heart"></i><span>Wishlist</span><span class="badge" id="wishlistBadge">0</span></a>
@@ -680,25 +362,40 @@
     <a href="#" class="nav-item" id="menuToggle"><i class="fas fa-bars"></i><span>Menu</span></a>
   </nav>
 
-  <!-- ========== MENU OVERLAY ========== -->
+  <!-- MENU OVERLAY -->
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
     <div class="menu-links" id="menuLinks"></div>
   </div>
 
-  <!-- ========== AUTH MODAL ========== -->
+  <!-- AUTH MODAL (with Google Sign-In) -->
   <div class="modal-overlay" id="authModal">
     <div class="modal">
       <button class="modal-close" id="closeAuthModal"><i class="fas fa-times"></i></button>
+      <h3 id="authModalTitle" style="text-align:center; margin-bottom:18px;">Welcome to Mordokan</h3>
+
+      <!-- Google Sign-In Button -->
+      <button type="button" class="btn-google" id="googleSignInBtn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+        Sign in with Google
+      </button>
+
+      <div class="divider">OR</div>
+
+      <!-- Tab buttons -->
       <div style="display:flex; gap:10px; margin-bottom:20px;">
         <button id="tabLogin" class="btn-primary" style="background:var(--primary); flex:1;">Login</button>
         <button id="tabRegister" class="btn-outline" style="flex:1;">Register</button>
       </div>
+
+      <!-- Login Form -->
       <form id="loginForm">
         <div class="form-group"><label>Email</label><input type="email" id="loginEmail" required></div>
         <div class="form-group"><label>Password</label><input type="password" id="loginPassword" required></div>
         <button type="submit" class="btn-primary">Login</button>
       </form>
+
+      <!-- Register Form -->
       <form id="registerForm" style="display:none;">
         <div class="form-group"><label>Username</label><input type="text" id="regUsername" required></div>
         <div class="form-group"><label>Phone Number</label><input type="tel" id="regPhone" required></div>
@@ -707,16 +404,16 @@
         <div class="form-group"><label>Confirm Password</label><input type="password" id="regConfirm" required></div>
         <button type="submit" class="btn-primary">Register</button>
       </form>
-      <div id="authError" style="color:#e74c3c; font-size:0.85rem; margin-top:12px;"></div>
+      <div id="authError" style="color:#e74c3c; font-size:0.85rem; margin-top:12px; text-align:center;"></div>
     </div>
   </div>
 
-  <!-- ========== PRODUCT DETAIL MODAL ========== -->
+  <!-- PRODUCT DETAIL MODAL -->
   <div class="modal-overlay" id="productModal">
     <div class="modal" id="productModalContent"></div>
   </div>
 
-  <!-- ========== CHECKOUT MODAL ========== -->
+  <!-- CHECKOUT MODAL -->
   <div class="modal-overlay" id="checkoutModal">
     <div class="modal">
       <button class="modal-close" id="closeCheckoutModal"><i class="fas fa-times"></i></button>
@@ -732,14 +429,14 @@
 
   <div class="toast" id="toast"></div>
 
-  <!-- ========== JAVASCRIPT ========== -->
+  <!-- JAVASCRIPT -->
   <script type="module">
     // ---------- FIREBASE IMPORTS (v9 Modular) ----------
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
     import { getDatabase, ref, set, get, push, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
-    // ---------- YOUR NEW FIREBASE CONFIG (Mordokan project) ----------
+    // ---------- FIREBASE CONFIG (Mordokan) ----------
     const firebaseConfig = {
       apiKey: "AIzaSyDb-1fJathbRg-Aim5Sa9SGM7yuc-ooUPA",
       authDomain: "mordokan.firebaseapp.com",
@@ -750,10 +447,10 @@
       appId: "1:314073172069:web:50784953556eac8218de8c"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getDatabase(app);
+    const googleProvider = new GoogleAuthProvider();
 
     // ---------- GLOBALS ----------
     let currentUser = null;
@@ -766,6 +463,7 @@
     let sliderIndex = 0;
     let sliderInterval = null;
 
+    // UI elements
     const authDot = document.getElementById('authDot');
     const authLabel = document.getElementById('authLabel');
     const cartBadge = document.getElementById('cartBadge');
@@ -794,27 +492,63 @@
       setTimeout(() => toastEl.classList.remove('show'), 2500);
     }
 
+    // ---------- AUTH MODAL TABS ----------
     const tabLogin = document.getElementById('tabLogin');
     const tabRegister = document.getElementById('tabRegister');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const authError = document.getElementById('authError');
+    const authModalTitle = document.getElementById('authModalTitle');
 
     tabLogin.onclick = () => {
       tabLogin.classList.add('btn-primary'); tabLogin.classList.remove('btn-outline');
       tabRegister.classList.add('btn-outline'); tabRegister.classList.remove('btn-primary');
       loginForm.style.display = 'block'; registerForm.style.display = 'none';
       authError.textContent = '';
+      authModalTitle.textContent = 'Welcome Back';
     };
     tabRegister.onclick = () => {
       tabRegister.classList.add('btn-primary'); tabRegister.classList.remove('btn-outline');
       tabLogin.classList.add('btn-outline'); tabLogin.classList.remove('btn-primary');
       registerForm.style.display = 'block'; loginForm.style.display = 'none';
       authError.textContent = '';
+      authModalTitle.textContent = 'Create Account';
     };
 
     document.getElementById('closeAuthModal').onclick = () => authModal.classList.remove('open');
     document.getElementById('closeCheckoutModal').onclick = () => checkoutModal.classList.remove('open');
+
+    // ---------- GOOGLE SIGN-IN ----------
+    document.getElementById('googleSignInBtn').onclick = async () => {
+      authError.textContent = '';
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+
+        // Check if user profile exists in DB, if not create one
+        const userRef = ref(db, `users/${user.uid}`);
+        const snap = await get(userRef);
+        if (!snap.exists()) {
+          await set(userRef, {
+            username: user.displayName || 'Google User',
+            phoneNumber: user.phoneNumber || '',
+            email: user.email,
+            createdAt: Date.now()
+          });
+        }
+        authModal.classList.remove('open');
+        showToast('Signed in with Google!');
+      } catch (err) {
+        console.error(err);
+        if (err.code === 'auth/popup-closed-by-user') {
+          authError.textContent = 'Sign-in popup was closed.';
+        } else if (err.code === 'auth/popup-blocked') {
+          authError.textContent = 'Popup blocked. Please allow popups for this site.';
+        } else {
+          authError.textContent = err.message;
+        }
+      }
+    };
 
     // ---------- AUTH STATE ----------
     onAuthStateChanged(auth, async (user) => {
@@ -826,8 +560,20 @@
         const snapshot = await get(userRef);
         if (snapshot.exists()) {
           userProfile = snapshot.val();
+          // If Google user has no phoneNumber yet, keep as is
         } else {
-          userProfile = { username: 'User', phoneNumber: '', email: user.email };
+          // Fallback for Google users not yet saved
+          userProfile = {
+            username: user.displayName || 'User',
+            phoneNumber: '',
+            email: user.email
+          };
+          await set(userRef, {
+            username: userProfile.username,
+            phoneNumber: '',
+            email: user.email,
+            createdAt: Date.now()
+          });
         }
         loadCartAndWishlist();
         renderProfile();
@@ -846,7 +592,7 @@
       renderHomeProducts();
     });
 
-    // ---------- REGISTER ----------
+    // ---------- REGISTER (Email/Password) ----------
     registerForm.onsubmit = async (e) => {
       e.preventDefault();
       const username = document.getElementById('regUsername').value.trim();
@@ -867,7 +613,7 @@
       }
     };
 
-    // ---------- LOGIN ----------
+    // ---------- LOGIN (Email/Password) ----------
     loginForm.onsubmit = async (e) => {
       e.preventDefault();
       const email = document.getElementById('loginEmail').value.trim();
@@ -881,6 +627,7 @@
       }
     };
 
+    // ---------- LOGOUT ----------
     async function logout() {
       await signOut(auth);
       showToast('Logged out');
@@ -889,6 +636,7 @@
 
     document.getElementById('profileLogoutBtn').onclick = logout;
 
+    // ---------- LOAD CART & WISHLIST ----------
     function loadCartAndWishlist() {
       if (!currentUser) return;
       onValue(ref(db, `users/${currentUser.uid}/cart`), (snap) => {
@@ -910,6 +658,7 @@
       cartBadge.textContent = cartCount;
     }
 
+    // ---------- HOME PRODUCTS ----------
     function renderHomeProducts() {
       let products = Object.entries(allProducts).map(([id, p]) => ({ id, ...p }));
       if (currentCategory !== 'all') products = products.filter(p => p.category === currentCategory);
@@ -998,6 +747,7 @@
       }
     }
 
+    // ---------- CART ----------
     function renderCart() {
       const items = Object.entries(cart);
       if (!items.length) {
@@ -1051,6 +801,7 @@
       showToast('Item removed');
     }
 
+    // ---------- WISHLIST ----------
     function renderWishlist() {
       const items = Object.entries(wishlist);
       if (!items.length) {
@@ -1079,6 +830,7 @@
       });
     }
 
+    // ---------- CHECKOUT ----------
     function openCheckout() {
       if (!currentUser) { authModal.classList.add('open'); return; }
       if (userProfile) {
@@ -1107,6 +859,7 @@
       location.hash = '#orders';
     };
 
+    // ---------- ORDERS ----------
     function renderOrders() {
       if (!currentUser) { ordersContainer.innerHTML = '<div class="empty-state"><i class="fas fa-receipt"></i><p>Login to see orders</p></div>'; return; }
       onValue(ref(db, `orders/${currentUser.uid}`), (snap) => {
@@ -1131,11 +884,13 @@
       }, { onlyOnce: true });
     }
 
+    // ---------- PROFILE ----------
     function renderProfile() {
       if (currentUser && userProfile) {
+        const hasPhone = userProfile.phoneNumber && userProfile.phoneNumber.trim();
         profileContent.innerHTML = `
           <p><i class="fas fa-user"></i> <strong>${userProfile.username || 'User'}</strong></p>
-          <p style="margin-top:10px;"><i class="fas fa-phone"></i> ${userProfile.phoneNumber || 'Not set'}</p>
+          <p style="margin-top:10px;"><i class="fas fa-phone"></i> ${hasPhone ? userProfile.phoneNumber : '<em style="color:var(--text-light);">Not set (add at checkout)</em>'}</p>
           <p style="margin-top:6px;"><i class="fas fa-envelope"></i> ${userProfile.email || currentUser.email}</p>
         `;
       } else {
@@ -1143,6 +898,7 @@
       }
     }
 
+    // ---------- MENU ----------
     function renderMenu() {
       const logged = !!currentUser;
       const links = logged ? [
@@ -1176,6 +932,7 @@
     document.getElementById('menuToggle').onclick = () => menuOverlay.classList.add('open');
     document.getElementById('closeMenu').onclick = () => menuOverlay.classList.remove('open');
 
+    // ---------- CONTACT ----------
     document.getElementById('contactForm').onsubmit = async (e) => {
       e.preventDefault();
       const name = document.getElementById('contactName').value.trim();
@@ -1187,6 +944,7 @@
       e.target.reset();
     };
 
+    // ---------- SEARCH ----------
     searchInput.oninput = () => {
       const q = searchInput.value.toLowerCase().trim();
       const products = Object.entries(allProducts).map(([id, p]) => ({ id, ...p }));
@@ -1195,6 +953,7 @@
       attachCardEvents(searchResults);
     };
 
+    // ---------- HERO SLIDER ----------
     function initSlider() {
       onValue(ref(db, 'sliderImages'), (snap) => {
         const data = snap.val() || {};
@@ -1232,6 +991,7 @@
     document.getElementById('heroPrev').onclick = () => { if (sliderImages.length) { sliderIndex = (sliderIndex - 1 + sliderImages.length) % sliderImages.length; updateHeroSlide(); } };
     document.getElementById('heroNext').onclick = () => { if (sliderImages.length) nextSlide(); };
 
+    // ---------- LOAD PRODUCTS ----------
     onValue(ref(db, 'products'), (snap) => {
       allProducts = snap.val() || {};
       renderHomeProducts();
@@ -1253,6 +1013,7 @@
       });
     }
 
+    // ---------- ROUTING ----------
     function handleRoute() {
       const hash = location.hash.replace('#', '') || 'home';
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
